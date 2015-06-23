@@ -1,0 +1,10 @@
+-cp src
+-D doc-gen
+-lib hxnodejs
+--macro include('electronx')
+--no-output
+--each
+
+--next
+-xml output/js.xml
+-js dummy.js

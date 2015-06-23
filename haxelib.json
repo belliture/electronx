@@ -1,0 +1,14 @@
+{
+  "name": "electronx",
+  "url": "https://github.com/belliture/electronx",
+  "license": "MIT",
+  "tags": ["js", "electron"],
+  "description": "Haxe extern for electron",
+  "version": "0.0.0",
+  "classPath": "src",
+  "releasenote": "Extern for electron v0.28.3",
+  "contributors": ["belliture"],
+  "dependencies": {
+    "hxnodejs": ""
+  }
+}
