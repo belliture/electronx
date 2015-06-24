@@ -1,6 +1,6 @@
 package electronx;
 
-@:native("require('remove').require('menu')")
+@:jsRequire("menu")
 extern class Menu {
     public static function setApplicationMenu(menu:Menu):Void;
 
@@ -21,7 +21,7 @@ extern class Menu {
     public function insert(pos:Int, menuItem:MenuItem):Void;
 }
 
-@:native("require('remote').require('menu-item')")
+@:jsRequire("menu-item")
 extern class MenuItem {
     public function new(options:MenuItemOption);
 }
