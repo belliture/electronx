@@ -1,4 +1,4 @@
-package electronx;
+package electronx.main;
 
 import js.node.Buffer;
 

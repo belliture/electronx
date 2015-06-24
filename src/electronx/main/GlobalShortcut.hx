@@ -1,4 +1,4 @@
-package electronx;
+package electronx.main;
 
 @:jsRequire("global-shortcut")
 extern class GlobalShortcut {

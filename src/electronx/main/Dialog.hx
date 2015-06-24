@@ -1,7 +1,7 @@
-package electronx;
+package electronx.main;
 
-import electronx.BrowserWindow;
 import electronx.NativeImage;
+import electronx.main.BrowserWindow;
 
 @:jsRequire("dialog")
 extern class Dialog {

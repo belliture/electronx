@@ -1,9 +1,8 @@
-package electronx;
+package electronx.main;
 
-import electronx.BrowserWindow;
-import electronx.Menu;
-import electronx.Task;
 import electronx.events.ElectronEvent;
+import electronx.main.BrowserWindow;
+import electronx.main.Menu;
 import haxe.Constraints.Function;
 import js.node.events.EventEmitter;
 
@@ -87,4 +86,13 @@ extern class Dock {
     public function show():Void;
 
     public function setMenu(menu:Menu):Void;
+}
+
+typedef Task = {
+    program: String,
+    arguments: String,
+    title: String,
+    description: String,
+    iconPath: String,
+    iconIndex: Int
 }

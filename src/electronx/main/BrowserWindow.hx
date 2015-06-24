@@ -1,12 +1,12 @@
-package electronx;
+package electronx.main;
 
-import electronx.Menu;
 import electronx.Rect;
 import electronx.Size;
-import electronx.WebContents;
 import electronx.WH;
 import electronx.XY;
 import electronx.events.ElectronEvent;
+import electronx.main.Menu;
+import electronx.main.WebContents;
 import haxe.Constraints.Function;
 import js.node.Buffer;
 import js.node.events.EventEmitter;

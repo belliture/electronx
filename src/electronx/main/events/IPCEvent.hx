@@ -1,6 +1,6 @@
 package electronx.main.events;
 
-import electronx.WebContents;
+import electronx.main.WebContents;
 
 extern class IPCEvent {
     public var returnValue(default,default):Dynamic;

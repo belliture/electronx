@@ -1,4 +1,4 @@
-package electronx;
+package electronx.main;
 
 import haxe.Constraints.Function;
 

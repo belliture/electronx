@@ -1,4 +1,4 @@
-package electronx;
+package electronx.main;
 
 @:jsRequire("menu")
 extern class Menu {

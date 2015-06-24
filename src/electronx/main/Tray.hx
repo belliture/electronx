@@ -1,8 +1,8 @@
-package electronx;
+package electronx.main;
 
-import electronx.Menu;
 import electronx.Rect;
 import electronx.events.ElectronEvent;
+import electronx.main.Menu;
 import haxe.Constraints.Function;
 import haxe.extern.EitherType;
 import js.node.events.EventEmitter;

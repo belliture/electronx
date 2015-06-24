@@ -1,4 +1,4 @@
-package electronx;
+package electronx.main;
 
 import haxe.extern.Rest;
 import electronx.events.ElectronEvent;
@@ -108,7 +108,7 @@ extern class Cookies {
     public function get(details:GetCookie, callback:Dynamic -> Cookie -> Void):Void;
 
     public function set(details:SetCookie, callback:Dynamic -> Void):Void;
-    
+
     public function remove(details:{ url:String, name:String }, callback:Dynamic -> Void):Void;
 }
 
