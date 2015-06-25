@@ -1,6 +1,8 @@
 package electronx.main;
 
+import js.Lib;
 import js.node.events.EventEmitter;
 
-@:jsRequire("ipc")
-extern class IPC extends EventEmitter<IPC> {}
+extern class IPC extends EventEmitter<IPC> {
+    @:extern public static inline function require():IPC return Lib.require("ipc");
+}

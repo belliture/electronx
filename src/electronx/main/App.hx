@@ -4,6 +4,7 @@ import electronx.events.ElectronEvent;
 import electronx.main.BrowserWindow;
 import electronx.main.Menu;
 import haxe.Constraints.Function;
+import js.Lib;
 import js.node.events.EventEmitter;
 
 @:enum abstract AppEvent<T:Function>(Event<T>) to Event<T> {
@@ -41,29 +42,30 @@ abstract BounceRequestId(Int) from Int to Int {
     inline public function new(id:Int) this = id;
 }
 
-@:jsRequire("app")
 extern class App extends EventEmitter<App> {
-    public static function quit():Void;
+    @:extern public static inline function require():App return Lib.require("app");
 
-    public static function getPath(name:String):String;
+    public function quit():Void;
 
-    public static function setPath(name:String, path:String):Void;
+    public function getPath(name:String):String;
 
-    public static function getVersion():String;
+    public function setPath(name:String, path:String):Void;
 
-    public static function getName():String;
+    public function getVersion():String;
 
-    public static function resolveProxy(url:String, callback:Function):String;
+    public function getName():String;
 
-    public static function addRecentDocument(path:String):Void;
+    public function resolveProxy(url:String, callback:Function):String;
 
-    public static function clearRecentDocuments():Void;
+    public function addRecentDocument(path:String):Void;
 
-    public static function setUserTasks(tasks:Array<Task>):Void;
+    public function clearRecentDocuments():Void;
 
-    public static var commandLine(default,null):CommandLine;
+    public function setUserTasks(tasks:Array<Task>):Void;
 
-    public static var dock(default,null):Null<Dock>;
+    public var commandLine(default,null):CommandLine;
+
+    public var dock(default,null):Null<Dock>;
 }
 
 extern class CommandLine {

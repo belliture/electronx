@@ -5,6 +5,7 @@ import electronx.Rect;
 import electronx.Size;
 import electronx.events.ElectronEvent;
 import haxe.Constraints.Function;
+import js.Lib;
 import js.node.events.EventEmitter;
 
 @:enum abstract ScreenEvent<T:Function>(Event<T>) to Event<T> {
@@ -13,17 +14,18 @@ import js.node.events.EventEmitter;
     var DisplayMetricsChanged:ScreenEvent<ElectronEvent -> Display -> Array<String> -> Void> = "display-metrics-changed";
 }
 
-@:jsRequire("screen")
 extern class Screen extends EventEmitter<Screen> {
-    public static function getCursorScreenPoint():Point;
+    @:extern public static inline function require():Screen return Lib.require("screen");
 
-    public static function getPrimaryDisplay():Display;
+    public function getCursorScreenPoint():Point;
 
-    public static function getAllDisplays():Array<Display>;
+    public function getPrimaryDisplay():Display;
 
-    public static function getDisplayNearestPoint(point:Point):Display;
+    public function getAllDisplays():Array<Display>;
 
-    public static function getDisplayMatching(rect:Rect):Display;
+    public function getDisplayNearestPoint(point:Point):Display;
+
+    public function getDisplayMatching(rect:Rect):Display;
 }
 
 typedef Display = {

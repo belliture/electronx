@@ -2,6 +2,7 @@ package electronx.main;
 
 import haxe.Constraints.Function;
 import electronx.events.ElectronEvent;
+import js.Lib;
 import js.node.events.EventEmitter;
 
 @:enum abstract AutoUpdaterEvent<T:Function>(Event<T>) to Event<T> {
@@ -12,8 +13,10 @@ import js.node.events.EventEmitter;
     var UpdateDownloaded:AutoUpdaterEvent<ElectronEvent -> String -> String -> Date -> String -> Function> = "update-downloaded";
 }
 
-@:jsRequire("auto-updater")
 extern class AutoUpdater extends EventEmitter<AutoUpdater> {
-    public static function setFeedUrl(url:String):Void;
-    public static function checkForUpdates():Void;
+    @:extern public static inline function require():AutoUpdater return Lib.require("auto-updater");
+
+    public function setFeedUrl(url:String):Void;
+
+    public function checkForUpdates():Void;
 }
